@@ -1,3 +1,5 @@
+![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/0bec60c5-743e-4921-9309-c59feff66ed9)
+
 This repository is meant to help people use `zrok` to run Foundry Virutual Tabletop (VTT). There are two basic sections, using
 a zrok public share, accessable to anyone on the internet who knows the url or a zrok private share, where there users need
 to also have zrok installed and is **only** available via zrok (but available to anyone who has zrok running).
