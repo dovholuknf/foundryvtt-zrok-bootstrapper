@@ -19,9 +19,11 @@ This repository is meant to help people use `zrok` to run Foundry Virutual Table
 ## Public Foundry VTT server
 
 A public Foundry VTT server is one that is exposed to anyone on the internet but to access the server people will need to know your special url.
-This makes it _highly_ unlikely for random people to find your Foundry server. Still you should follow the Foundry VTT best practices for 
-securing your game. Use strong passwords, etc. With zrok though, you'll be getting HTTPS/TLS for free since zrok.io and any selfhosting 
-zrok instances need to enable it. This option is great for most people since it will make it very easy to expose your Foundry VTT server without
+This makes it **highly** unlikely for random people to find your Foundry server, it won't be scannable by traditional port scanning. 
+Still you should follow the Foundry VTT best practices for securing your game. Use strong passwords, etc. 
+
+Another nice bonus is that with zrok, you'll be getting HTTPS/TLS for free since https://zrok.io or the selfhosted zrok instances 
+will enable it. This option is great for most people since it will make it very easy to expose your Foundry VTT server without
 needing to setup TLS and without needing to figure out how to forward ports in your firewall. You can also run this from anywhere, even if you
 pick your laptop/pc up and move it. You won't have to deal with IP addresses, dynamic DNS, etc.
 
