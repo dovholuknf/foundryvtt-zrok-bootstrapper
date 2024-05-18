@@ -7,7 +7,7 @@ a zrok public share, accessible to anyone on the internet who knows the url or a
 to also have zrok installed and is **only** available via zrok (but available to anyone who has zrok running).
 
 ### YouTube Video Overview:
-![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/50579267-af7a-4a3f-ba30-a17f8b30c47f)
+[<img src="https://img.youtube.com/vi/x-3PODwEdDM/hqdefault.jpg">](https://www.youtube.com/watch?v=x-3PODwEdDM)
 
 ## Prerequisites
 * download/install/start Foundry VTT and make sure it works
