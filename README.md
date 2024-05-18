@@ -1,11 +1,13 @@
 ![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/d7e30ecf-06be-4a6e-b14b-82aa0154ba87)
 
+# zrok and Foundry Virutual Tabletop (VTT)
+
 This repository is meant to help people use `zrok` to run Foundry Virutual Tabletop (VTT). There are two basic sections, using
 a zrok public share, accessable to anyone on the internet who knows the url or a zrok private share, where there users need
 to also have zrok installed and is **only** available via zrok (but available to anyone who has zrok running).
 
 ### YouTube Video Overview:
-![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/ca00fb97-0c9d-475c-8b06-98d9e1b463d3)
+![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/50579267-af7a-4a3f-ba30-a17f8b30c47f)
 
 ## Prerequisites
 * download/install/start Foundry VTT and make sure it works
