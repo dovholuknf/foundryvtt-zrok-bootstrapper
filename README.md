@@ -16,7 +16,7 @@ This repository is meant to help people use `zrok` to run Foundry Virutual Table
 	It's really easiest if you [just watch and follow that video](https://youtu.be/Je5j4ThouCo).
 
 
-## Public Foundry VTT server
+## Public Foundry VTT server - So Easy!
 
 A public Foundry VTT server is one that is exposed to anyone on the internet but to access the server people will need to know your special url.
 This makes it **highly** unlikely for random people to find your Foundry server, it won't be scannable by traditional port scanning. 
@@ -32,6 +32,7 @@ To run a public Foundry VTT server run the `start-server.ps1` script with the -P
 
       powershell.exe -ExecutionPolicy Bypass -File start-server.ps1 -Public
 	  
+> [!NOTE]
 This will release any pre-existing share, then share it back again "publicly".
 
 ### Inviting people to join a zrok-public Foundry VTT server
@@ -54,6 +55,7 @@ To run a zrok-private Foundry VTT server run the `start-server.ps1` script **wit
 
       powershell.exe -ExecutionPolicy Bypass -File start-server.ps1
 
+> [!NOTE]
 This will release any pre-existing share, then share it back again "privately".
 
 ### Inviting people to join a zrok-private Foundry VTT server
