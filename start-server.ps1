@@ -60,11 +60,12 @@ if ($IS_RESERVED) {
 		}
 	}
 	if ($PUBLIC) {
+		Write-Host -ForegroundColor Green "Reserving public share: $RESERVED_SHARE"
 		& "$PATH_TO_ZROK" reserve public "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" --unique-name "$RESERVED_SHARE"
 	} else {
+		Write-Host -ForegroundColor Green "Reserving private share: $RESERVED_SHARE"
 		& "$PATH_TO_ZROK" reserve private "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" --backend-mode tcpTunnel --unique-name "$RESERVED_SHARE"
 	}
-	Write-Host -ForegroundColor Green "Reserving share: $RESERVED_SHARE"
 } else {
 	Write-Host -ForegroundColor Green "Using ephemeral share. This share changes every time!"
 }
