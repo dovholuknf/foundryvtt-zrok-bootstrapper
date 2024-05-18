@@ -1,9 +1,9 @@
 ![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/d7e30ecf-06be-4a6e-b14b-82aa0154ba87)
 
-# zrok and Foundry Virutual Tabletop (VTT)
+# zrok and Foundry Virtual Tabletop (VTT)
 
-This repository is meant to help people use `zrok` to run Foundry Virutual Tabletop (VTT). There are two basic sections, using
-a zrok public share, accessable to anyone on the internet who knows the url or a zrok private share, where there users need
+This repository is meant to help people use `zrok` to run Foundry Virtual Tabletop (VTT). There are two basic sections, using
+a zrok public share, accessible to anyone on the internet who knows the url or a zrok private share, where their users need
 to also have zrok installed and is **only** available via zrok (but available to anyone who has zrok running).
 
 ### YouTube Video Overview:
@@ -28,7 +28,7 @@ A public Foundry VTT server is one that is exposed to anyone on the internet but
 This makes it **highly** unlikely for random people to find your Foundry server, it won't be scannable by traditional port scanning. 
 Still you should follow the Foundry VTT best practices for securing your game. Use strong passwords, etc. 
 
-Another nice bonus is that with zrok, you'll be getting HTTPS/TLS for free since https://zrok.io or the selfhosted zrok instances 
+Another nice bonus is that with zrok, you'll be getting HTTPS/TLS for free since https://zrok.io or the self-hosted zrok instances 
 will enable it. This option is great for most people since it will make it very easy to expose your Foundry VTT server without
 needing to setup TLS and without needing to figure out how to forward ports in your firewall. You can also run this from anywhere, even if you
 pick your laptop/pc up and move it. You won't have to deal with IP addresses, dynamic DNS, etc.
@@ -52,7 +52,7 @@ A "private" Foundry VTT server is one that is not exposed to the internet at all
 the special token --and-- they will have to run zrok as well. It has all the benefits of a public VTT server except it tunnels the traffic from
 clients to the server securely using a fully zero trust connection (mutual TLS etc) without the need for setting TLS up in the Foundry server. 
 That does have the down side of forcing you how to figure out using TLS/certs so you can configure voice/video chat, but it's entirely hidden from
-the internet. If there's demand for it, I'll see if i can figure out an easy guide for that, but I expect there's plenty online already.
+the internet. If there's demand for it, I'll see if I can figure out an easy guide for that, but I expect there's plenty online already.
 
 Here's how you keep your Foundry VTT server even away from the public entirely.
 
