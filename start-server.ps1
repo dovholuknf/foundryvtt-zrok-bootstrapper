@@ -3,8 +3,15 @@ param(
     [string]$FOUNDRY_SERVER_IP = "127.0.0.1",
     [string]$FOUNDRY_SERVER_PORT = "30000",
 	[switch]$PUBLIC = $false,
+	[string]$RESERVED = "true",
 	[string]$SHARE_NAME = "foundryvtt"
 )
+
+try {
+  $IS_RESERVED = [System.Convert]::ToBoolean($RESERVED) 
+} catch [FormatException] {
+  $IS_RESERVED = $false
+}
 
 $command = Get-Command zrok -ErrorAction SilentlyContinue
 if (Get-Command zrok -ErrorAction SilentlyContinue) {
@@ -43,21 +50,24 @@ $jsonObject = Invoke-Expression "$PATH_TO_ZROK overview" | ConvertFrom-Json
 
 $targetEnvironment = $jsonObject.environments | Where-Object { $_.environment.zId -eq $zid }
 
-if ($targetEnvironment) {
-    $shares = $targetEnvironment.shares | Where-Object { $_.token -eq $RESERVED_SHARE }
+if ($IS_RESERVED) {	
+	if ($targetEnvironment) {
+		$shares = $targetEnvironment.shares | Where-Object { $_.token -eq $RESERVED_SHARE }
 
-    if ($shares) {
-        Write-Host -ForegroundColor Yellow "Found share with token $RESERVED_SHARE in environment $zid. Releasing share..."
-		& "$PATH_TO_ZROK" release $RESERVED_SHARE
-    }
-}
-
-if ($PUBLIC) {
-	& "$PATH_TO_ZROK" reserve public "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" --unique-name "$RESERVED_SHARE"
+		if ($shares) {
+			Write-Host -ForegroundColor Yellow "Found share with token $RESERVED_SHARE in environment $zid. Releasing share..."
+			& "$PATH_TO_ZROK" release $RESERVED_SHARE
+		}
+	}
+	if ($PUBLIC) {
+		& "$PATH_TO_ZROK" reserve public "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" --unique-name "$RESERVED_SHARE"
+	} else {
+		& "$PATH_TO_ZROK" reserve private "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" --backend-mode tcpTunnel --unique-name "$RESERVED_SHARE"
+	}
+	Write-Host -ForegroundColor Green "Reserving share: $RESERVED_SHARE"
 } else {
-	& "$PATH_TO_ZROK" reserve private "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" --backend-mode tcpTunnel --unique-name "$RESERVED_SHARE"
+	Write-Host -ForegroundColor Green "Using ephemeral share. This share changes every time!"
 }
-Write-Host -ForegroundColor Green "Reserving share: $RESERVED_SHARE"
 
 $OriginalProgressPreference = $Global:ProgressPreference
 $Global:ProgressPreference = 'SilentlyContinue'
@@ -71,7 +81,18 @@ $Global:ProgressPreference = $OriginalProgressPreference
 
 Write-Host "Port $FOUNDRY_SERVER_PORT is now open. Starting zrok share"
 
-& "$PATH_TO_ZROK" share reserved $RESERVED_SHARE
+if ($IS_RESERVED) {
+	& "$PATH_TO_ZROK" share reserved $RESERVED_SHARE
+} else {
+	$PUBLIC_OR_PRIVATE="private"
+	$BACKEND_MODE="--backend-mode tcpTunnel"
+	if ($PUBLIC) {
+		$PUBLIC_OR_PRIVATE="public"
+		$BACKEND_MODE=""
+	}
+	& "$PATH_TO_ZROK" share $PUBLIC_OR_PRIVATE "${FOUNDRY_SERVER_IP}:${FOUNDRY_SERVER_PORT}" 
+}
+
 
 Write-Host ""
 Write-Host ""
