@@ -1,3 +1,9 @@
+> [!WARNING]
+>
+> **USE zrok 1.0** - do not download zrok 2.0 at this time!
+
+---
+
 ![image](https://github.com/dovholuknf/foundryvtt-zrok-bootstrapper/assets/46322585/d7e30ecf-06be-4a6e-b14b-82aa0154ba87)
 
 # zrok and Foundry Virtual Tabletop (VTT)
