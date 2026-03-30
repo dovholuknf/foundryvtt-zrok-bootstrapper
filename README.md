@@ -17,7 +17,7 @@ to also have zrok installed and is **only** available via zrok (but available to
 
 ## Prerequisites
 * download/install/start Foundry VTT and make sure it works
-* download [the latest zrok for windows](https://github.com/openziti/zrok/releases/latest) and invite yourself to the platform. See [this video for a quick/easy walkthrough](https://youtu.be/Je5j4ThouCo) walkthrough of the process.
+* download [the latest zrok v1 for windows (as of mar-30-2026 1.1.10)](https://github.com/openziti/zrok/releases/tag/v1.1.10) **do not download zrok2** and invite yourself to the platform. See [this video for a quick/easy walkthrough](https://youtu.be/Je5j4ThouCo) walkthrough of the process.
 * if you didn't watch/follow the video above, put the zrok.exe somewhere you can find, for example `c:\zrok\zrok.exe`
 * if you didn't watch/follow the video above, invite yourself to zrok using: `zrok invite`. see https://docs.zrok.io/docs/getting-started/#generating-an-invitation
 
